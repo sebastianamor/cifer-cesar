@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet" />
+    <script  src="index.js" type="text/javascript"></script>
+    <title>シーザー暗号</title>
+</head>
+<body>
+    <main>
+        <h1>シーザー暗号</h1>
+         <form action="cifrador" autocomplete="off">
+            <input id="input-original" spellcheck="false" placeholder="テキストを書いてください" type="text"  name="text" >
+         </form>
+         <div  id="resultado" ></div>
+         <div   class="rango" >
+            <input  id="rango" type="range" value="10"  min="1"  max="20" oninput="this.nextElementSibling.value = this.value">
+             <output>10</output>
+         </div>
+    </main>
+</body>
+</html>
