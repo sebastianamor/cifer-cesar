@@ -6,10 +6,19 @@ const rango = document.getElementById('rango');
 
 const shifMessage = () => {
     const wordArray = [...inputOriginal.value.toUpperCase()];
-    alert(wordArray);
-
+    printChar(0,wordArray);
 }
 
+const printChar = (currentLetterIndex, wordArray) => {
+    if(wordArray.length === currentLetterIndex) return;
+    inputOriginal.value = inputOriginal.value.substring(1);
+    const spanChar = document.createElement("span");
+    resultado.appendChild(spanChar);
+    const charSinCodificar = wordArray[currentLetterIndex];
+    spanChar.innerHTML = alfabeto.includes(charSinCodificar) ? 
+       alfabeto[(alfabeto.indexOf(charSinCodificar) + parseInt(rango.value))  % alfabeto.length ] :
+       printChar(currentLetterIndex + 1, wordArray);
+}
 
 const submit = e => {
     e.preventDefault();
@@ -17,5 +26,5 @@ const submit = e => {
     shifMessage()
 }
 
-cifrador.onsubmit = submit;
+cifrador.onsubmit = submit
 
